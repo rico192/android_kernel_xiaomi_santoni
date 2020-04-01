@@ -9,7 +9,7 @@ jobs:
       ## Add the following Token in encrypted form inside CircleCI
       # GITHUB_TOKEN: '' # GitHub OAuth Token, for release. Has been set in context.
       KS: 'https://github.com/rico192/android_kernel_xiaomi_santoni.git' # The Full URL of DT
-      Branch: 'q/caf-318'
+      Branch: 'q/caf-3.18'
       TC_ARM64: 'https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git'
       TC_ARM: 'https://github.com/ProtoChuz/toolchains.git'
       ANY_KERNEL3: 'https://github.com/rico192/anykernel3.git'
