@@ -77,8 +77,8 @@ jobs:
             git clone ${ANY_KERNEL3} zip --depth=1
             mkdir release
             cp /home/builder/kernel/kernel/out/arch/arm64/boot/Image.gz-dtb zip/
-            zip -r PREDATOR-santoni.zip /zip/*
-            cp PREDATOR-santoni.zip /release/
+            zip -r PREDATOR-santoni.zip /zip/* 2>&1 > /tmp/log.txt
+            cp PREDATOR-santoni.zip /release/ 2>&1 > /tmp/log.txt
       - run:
           name: Upload Log
           command: |
@@ -89,7 +89,7 @@ jobs:
       - run:
           name: Release all built files
           command: |
-            curl -F document=@release/$(echo *.zip) https://api.telegram.org/bot835531831:AAFe0klshiqGzbWjJvnKrQfyxMRz-hRirL4/sendDocument?chat_id=-1001478864606
+            curl -F document=@release/PREDATOR-santoni.zip https://api.telegram.org/bot835531831:AAFe0klshiqGzbWjJvnKrQfyxMRz-hRirL4/sendDocument?chat_id=-1001478864606
 
 workflows:
   version: 2
